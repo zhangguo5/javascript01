@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>artTemplate</title>
+	</head>
+	<body>
+		<div id="result">
+		</div>
+		<script src="js/artTemplate3/template.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/html" id="template1">
+			{{if isShow}}
+			  <h2>姓名：{{name}}</h2>
+			  <ul>
+			  {{each hobbies as hobby index}}
+			     <li>
+			     	{{index+1}} {{hobby}}
+			     </li>
+			  {{/each}}
+			  </ul>
+			{{/if}}
+		</script>
+		<script type="text/javascript">
+			var data={
+				isShow:true,
+				name:"Tom",
+				hobbies:["看书","上网","运动","电影","购物"]
+			};
+			//用数据与模板渲染(render)出结果
+			var html=template("template1",data);
+			document.getElementById("result").innerHTML=html;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>artDialog</title>
+	</head>
+
+	<body>
+		<button onclick="btn_dialog()">
+			弹出框
+		</button>
+		<button onclick="btn_loading()">
+			加载中
+		</button>
+		<script src="js/jQuery1.11.3/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/artDialog6/dialog-min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="js/artDialog6/ui-dialog.css" />
+		<script type="text/javascript">
+			function btn_dialog() {
+				var d = dialog({
+					title: '消息',
+					content: '风吹起的青色衣衫，夕阳里的温暖容颜，你比以前更加美丽，像盛开的花<br>——许巍《难忘的一天》',
+					okValue: '确 定',
+					ok: function() {
+						var that = this;
+						setTimeout(function() {
+							that.title('提交中..');
+						}, 2000);
+						return false;
+					},
+					cancelValue: '取消',
+					cancel: function() {
+						alert('你点了取消按钮')
+					}
+				});
+
+				d.show();
+			}
+
+			function btn_loading() {
+				dialog({
+					modal: true
+				}).show();
+			}
+
+			　　
+			var dtd = $.Deferred(); // 新建一个deferred对象
+			　　
+			var wait = function(dtd) {　　　　
+				var tasks = function() {　　　　　　
+					alert("执行完毕！");　　　　　　
+					dtd.resolve(); // 改变deferred对象的执行状态　　　
+				};　　　　
+				setTimeout(tasks, 5000);　　　　
+				return dtd;　　
+			};
+
+			　　
+			$.when(wait(dtd)).done(function() {
+				alert("哈哈，成功了！");
+			}).fail(function() {
+				alert("出错啦！");
+			});
+		</script>
+	</body>
+
+</html>

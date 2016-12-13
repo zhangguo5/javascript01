@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>AJAX</title>
+	</head>
+	<body>
+		
+		<script src="js/jQuery1.11.3/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.get("http://localhost:8087/JavaScript001/Product?act=getAll",function(data){
+				alert(data);
+			});
+		</script>
+	</body>
+</html>
