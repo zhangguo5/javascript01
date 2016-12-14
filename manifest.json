@@ -1,4 +1,4 @@
-﻿{
+{
     "@platforms": ["android", "iPhone", "iPad"],
     "id": "H592F5F64",/*应用的标识，创建应用时自动生成，勿手动修改*/
     "name": "JavaScript01",/*应用名称，程序桌面图标名称*/
@@ -10,7 +10,7 @@
     "icons": {
         "72": "icon.png"
     },
-    "launch_path": "index.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+    "launch_path": "d05.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
     "developer": {
         "name": "",/*开发者名称*/
         "email": "",/*开发者邮箱地址*/
@@ -199,5 +199,51 @@
                 }
             }
         }
-    }
+    },
+	"dependencies": {
+		"pages": {
+			"d05.html": {
+				"resources": [
+					"js/artDialog6/dialog-min.js",
+					"js/jQuery1.11.3/jquery-1.11.3.min.js",
+					"js/artDialog6/ui-dialog.css"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"js/artTemplate3/template-native.js",
+				"js/artTemplate3/demo/include.html",
+				"js/artTemplate3/demo/no-escape.html",
+				"d07.html",
+				"js/artDialog6/dialog-plus.js",
+				"js/artTemplate3/template.js",
+				"js/artTemplate3/template-debug.js",
+				"js/artTemplate3/demo/debug.html",
+				"d04.html",
+				"js/artTemplate3/demo/print.html",
+				"d02.html",
+				"js/jQuery1.11.3/jQuery1.11.3_中文帮助.chw",
+				"js/artDialog6/dialog-plus-min.js",
+				"d03.html",
+				"js/jQuery1.11.3/jquery-1.11.3.js",
+				"d09.html",
+				"js/artDialog6/dialog.js",
+				"js/jQuery1.11.3/jQuery1.11.3_中文帮助.chm",
+				"js/artTemplate3/demo/helper.html",
+				"js/artTemplate3/demo/compile.html",
+				"js/jquery.transport.xdr.js",
+				"d08.html",
+				"js/artTemplate3/template-native-debug.js",
+				"js/artTemplate3/demo/index.html",
+				"js/artTemplate3/demo/basic.html",
+				"d01.html",
+				"js/jquery.transport.xdr.min.js",
+				"js/artTemplate3/demo/debug-syntax.html",
+				"d06.html"
+			]
+		}
+	}
 }

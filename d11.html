@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>回调</title>
+	</head>
+	<body>
+		<script src="js/jQuery1.11.3/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		   /*callback是一个当ajax请求成功时的回调方法*/
+			function getStudent(callback) {
+				$.get("student.json", function(data) {
+					callback(data);
+				}, "json");
+			}
+			
+			/*调用getStudent函数，传入参数，参数也是一个函数*/
+			getStudent(function(stu){
+				alert(stu.id);
+			});
+			
+			/*把一个方法作为参数传递给另一个方法可以认为是委托，如C++中的函数指针类似*/
+			getStudent(function(stu){
+				alert(stu.name);
+			});
+			
+			$.get("url1",function(){
+				$.get("url2",function(){
+					$.get("url3",function(){
+					  ...
+				   });
+				});
+			});
+		</script>
+	</body>
+</html>

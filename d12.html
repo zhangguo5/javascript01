@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延迟对象（deferred）</title>
+	</head>
+	<body>
+		<script src="js/jQuery1.11.3/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.get("stu.json", "json").done(function(stu) {
+				console.log(stu.name);
+			}).fail(function(xhr, status, errorThrown){
+				alert("xhr："+xhr+"，status："+status+"，errorThrown："+errorThrown);
+			});
+		</script>
+	</body>
+</html>

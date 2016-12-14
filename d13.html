@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延迟对象（deferred）</title>
+	</head>
+	<body>
+		<script src="js/jQuery1.11.3/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.get("student.j", "json").done(function(stu) {
+				console.log(stu.name);
+			}).fail(function(data, status, errorThrown){
+				console.log("data："+data+"，status："+status+"，errorThrown："+errorThrown);
+			}).always(function(data, textStatus){
+				console.log("ajax执行完成，完成状态："+textStatus);
+			});
+		</script>
+	</body>
+</html>

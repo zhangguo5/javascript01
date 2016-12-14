@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>延迟对象（deferred）</title>
+	</head>
+	<body>
+		<script src="js/jQuery1.11.3/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		    var myTask=function(){
+		    	//通过jQuery创建一个延迟对象
+		    	var def=$.Deferred();
+		    	setTimeout(function(){
+		    		//随机产生一个整数，如果是偶数
+		    		var n=Math.round(Math.random()*100);
+		    		if(n%2==0)
+		    		{
+		    			console.log("一个耗时的操作终于完成了，n="+n);
+		    			def.resolve();   //任务成功完成
+		    		}else{
+		    			console.log("一个耗时的操作失败，n="+n);
+		    			def.reject();  //拒绝，失败
+		    		}
+		    	},3000);
+		    	 //返回延迟对象，防止中间修改
+		    	return def.promise();
+		    }
+		    
+		    /*当方法myTask执行完成后，添加回调方法*/
+		    $.when(myTask()).done(function(){
+		    	console.log("执行成功");
+		    }).fail(function(){
+		    	console.log("执行失败");
+		    });
+		</script>
+	</body>
+</html>

@@ -1,0 +1,9 @@
+{
+	"d05.html": {
+		"resources": [
+			"js/artDialog6/dialog-min.js",
+			"js/jQuery1.11.3/jquery-1.11.3.min.js",
+			"js/artDialog6/ui-dialog.css"
+		]
+	}
+}

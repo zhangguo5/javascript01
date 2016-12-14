@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>回调</title>
+	</head>
+	<body>
+		<script src="js/jQuery1.11.3/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var student;
+			
+			
+			$.get("student.json",function(data){
+				student=data;
+			},"json");
+			
+			
+			$.ajax({
+				type:"get",
+				url:"student.json",
+				async:false,  /*非异步，同步*/
+				success:function(data){
+					student=data;
+				}
+			});
+			
+			
+		</script>
+	</body>
+</html>
